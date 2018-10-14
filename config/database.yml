@@ -52,4 +52,4 @@ production:
   database: geektown_production
   username: deploy
   socket: /var/lib/mysql/mysql.sock
-  password: <%= ENV['GEEKTOWN_DATABASE_PASSWORD'] %>
+  password: <%= Rails.application.credentials.geektown_database_password %>
