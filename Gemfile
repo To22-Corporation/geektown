@@ -57,7 +57,7 @@ end
 
 group :production, :staging do
   gem 'unicorn'
-  gem 'pg'
+  # gem 'pg'
 end
 
 
