@@ -1,10 +1,11 @@
+set :stage, :production
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server "153.126.150.208", user: "masahide", roles: %w{app db web}
-set :ssh_options, keys: '~/.ssh/id_rsa'
+server "153.126.134.91", user: "root", roles: %w{app db web}
+set :ssh_options, keys: '~/.ssh/id_geektown_rsa'
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
