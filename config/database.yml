@@ -51,4 +51,5 @@ production:
   <<: *default
   database: geektown_production
   username: deploy
+  socket: /var/lib/mysql/mysql.sock
   password: <%= Rails.application.credentials.geektown_database_password %>
