@@ -51,4 +51,5 @@ production:
   <<: *default
   database: geektown_production
   username: geektown
+  socket: /var/lib/mysql/mysql.sock
   password: <%= ENV['GEEKTOWN_DATABASE_PASSWORD'] %>
