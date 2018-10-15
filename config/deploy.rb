@@ -7,6 +7,17 @@ set :repo_url, "git@github.com:mitsu37is/geektown.git"
 # Default branch is :master
 set :branch, 'master'
 
+set :rbenv_type, :user
+set :rbenv_ruby, "2.5.1"
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+
+# Default value for :linked_files is []
+append :linked_files, "config/master.key"
+
+# using passenger
+set :passenger_restart_with_touch, true
+
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
 
@@ -19,9 +30,6 @@ set :branch, 'master'
 
 # Default value for :pty is false
 # set :pty, true
-
-# Default value for :linked_files is []
-append :linked_files, "config/master.key"
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
@@ -37,6 +45,3 @@ append :linked_files, "config/master.key"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
-
-set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby rails puma pumactl}

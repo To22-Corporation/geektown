@@ -39,7 +39,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 end
 
 group :development do
@@ -53,11 +52,11 @@ group :development do
   gem "capistrano", "~> 3.11", require: false
   gem 'capistrano-rbenv', require: false
   gem "capistrano-rails", "~> 1.4", require: false
+  gem "capistrano-passenger", "~> 0.2.0"
 end
 
 group :production, :staging do
-  gem 'unicorn'
-  # gem 'pg'
+
 end
 
 
