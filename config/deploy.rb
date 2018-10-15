@@ -7,6 +7,9 @@ set :repo_url, "git@github.com:mitsu37is/geektown.git"
 # Default branch is :master
 set :branch, 'master'
 
+set :rbenv_type, :user
+set :rbenv_ruby, "2.5.1"
+
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
 
