@@ -51,9 +51,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Capistrano is automating deploy task
   gem "capistrano", "~> 3.11", require: false
-  gem "capistrano-rails", "~> 1.4", require: false
   gem 'capistrano-rbenv', require: false
-  gem "capistrano-yarn"
+  gem "capistrano-rails", "~> 1.4", require: false
 end
 
 group :production, :staging do
