@@ -63,6 +63,6 @@ RSpec.describe User, type: :model do
       job: 0
     )
     user.valid?
-    expect(user.full_name).to match('石田匡秀')
+    expect(user.full_name).to eq '石田 匡秀'
   end
 end
