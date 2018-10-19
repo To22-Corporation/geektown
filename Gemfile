@@ -59,7 +59,7 @@ group :development do
 end
 
 group :production, :staging do
-
+  gem 'pg'
 end
 
 # User authenticate by Devise
