@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   adapter: postgresql
+  socket: /var/run/postgresql/.s.PGSQL.5432
   database: geektown_production
   password: <%= Rails.application.credentials.geektown_database_password %>
