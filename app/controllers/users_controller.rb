@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: :show
   def index
-    @users = User.all
+    @users = User.select { |user| user.role == 'engineer' }
   end
 
   def show; end
