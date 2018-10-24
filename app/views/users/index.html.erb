@@ -1,2 +1,11 @@
-User#Index だお
-<%= @users %>
+<h2>User#Index だお</h2>
+<ul class="list-group">
+  <% @users.each do |user| %>
+    <li class="list-group-item">
+      <%= link_to user.full_name, user_path(user) %>
+      <%= user.job %>
+      <%= user.age %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'GEEKTOWNに登録する', new_user_registration_path, class: 'btn btn-primary', role: "button" %>

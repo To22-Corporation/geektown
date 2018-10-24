@@ -1,0 +1,13 @@
+<h2>User#Show だお</h2>
+<ul class="list-group">
+  <li class="list-group-item">
+    <%= @user.full_name %>
+  </li>
+  <li class="list-group-item">
+    <%= @user.role %>
+  </li>
+  <li class="list-group-item">
+    <%= @user.job %>
+  </li>
+</ul>
+<%= link_to '一覧に帰る', root_path, class: 'btn btn-primary', role: "button" %>
