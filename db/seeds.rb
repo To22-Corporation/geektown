@@ -11,3 +11,9 @@
     job: i % 3
   )
 end
+Language.create(name: 'Ruby')
+Language.create(name: 'JavaScript')
+Language.create(name: 'HTML/CSS')
+Language.create(name: 'Python')
+Language.create(name: 'C/C++')
+Language.create(name: 'PHP')

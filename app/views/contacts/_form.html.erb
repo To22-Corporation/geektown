@@ -1,0 +1,20 @@
+<%= form_with model: Contact, local: true do |f| %>
+  <% if @contact.errors.any? %>
+    <%= @contact.errors.full_messages %>
+  <% end %>
+  <div class="field">
+    <%= f.label :engineer_id %><br>
+    <%= f.select(:engineer_id, User.all.select { |user| user.role == 'engineer' }.map { |engineer| [engineer.full_name, engineer.id] }, {}, class: 'form-control') %>
+  </div>
+  <div class="field">
+    <%= f.label :language_id %><br>
+    <%= f.select(:language_id, Language.all.map { |lang| [lang.name, lang.id] }, {}, class: 'form-control') %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, '内容を詳しく書いてください' %>
+    <%= f.text_area :content, class: 'form-control' %>
+  </div><br>
+  <div class="form-group">
+    <%= f.submit '内容を確認する', class: 'btn btn-primary' %>
+  </div>
+<% end %>
