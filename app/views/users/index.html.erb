@@ -8,4 +8,9 @@
     </li>
   <% end %>
 </ul>
-<%= link_to 'GEEKTOWNに登録する', new_user_registration_path, class: 'btn btn-primary', role: "button" %>
+<% if user_signed_in? %>
+  <%= link_to 'マイページ', user_path(current_user), class: 'btn btn-secondary', role: 'button' %>
+<% else %>
+  <%= link_to 'GEEKTOWNに登録する', new_user_registration_path, class: 'btn btn-primary', role: "button" %>
+<% end %>
+<%= link_to 'エンジニアに質問する', new_contact_path, class: 'btn btn-primary', role: "button" %>

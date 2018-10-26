@@ -2,6 +2,9 @@ class User < ApplicationRecord
   enum role: { general: 0, engineer: 1 }
   enum job: { collage: 0, bussiness: 1, student: 2 }
 
+  has_many :contacts
+  has_many :languages
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
