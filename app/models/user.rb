@@ -2,7 +2,8 @@ class User < ApplicationRecord
   enum role: { general: 0, engineer: 1 }
   enum job: { collage: 0, bussiness: 1, student: 2 }
 
-  has_many :contacts
+  has_many :user_contacts, class_name: 'Contact', :foreign_key => 'user_id'
+  has_many :engineer_contacts, class_name: 'Contact', :foreign_key => 'engineer_id'
   has_many :languages
 
   # Include default devise modules. Others available are:

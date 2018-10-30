@@ -11,6 +11,7 @@
     job: i % 3
   )
 end
+Language.destroy_all
 Language.create(name: 'Ruby')
 Language.create(name: 'JavaScript')
 Language.create(name: 'HTML/CSS')

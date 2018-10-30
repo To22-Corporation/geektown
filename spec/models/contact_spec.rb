@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Contact, type: :model do
+
   it 'is valid with a user, engineer, language, and content' do
     user = General.create(
       email: 'user@example.com',

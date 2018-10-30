@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :contacts
+  get '/home', to: 'home#index'
 end

@@ -41,6 +41,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Using RSpec for test framework
   gem 'rspec-rails'
+  # Use Factory Bot
+  gem 'factory_bot_rails'
 end
 
 group :development do
