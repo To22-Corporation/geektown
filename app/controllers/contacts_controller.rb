@@ -1,10 +1,10 @@
 class ContactsController < ApplicationController
   def new
-    @contact = current_user.contacts.new
+    @contact = current_user.user_contacts.new
   end
 
   def create
-    @contact = current_user.contacts.new(contact_params)
+    @contact = current_user.user_contacts.new(contact_params)
     if @contact.save
       redirect_to root_path
     else

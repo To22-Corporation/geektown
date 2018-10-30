@@ -11,7 +11,7 @@
   </li>
 </ul>
 <ul class="list-group">
-  <% @user.contacts.each do |contact| %>
+  <% @user.engineer_contacts.each do |contact| %>
     <li class="list-group-item">
       <%= User.find(contact.engineer_id).full_name %>
     </li>
@@ -24,4 +24,7 @@
     <br>
   <% end %>
 </ul>
+
+<%= render 'form' %>
+
 <%= link_to '一覧に帰る', root_path, class: 'btn btn-primary', role: "button" %>
