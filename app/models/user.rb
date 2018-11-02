@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one_attached :avatar
   enum role: { general: 0, engineer: 1 }
   enum job: { collage: 0, bussiness: 1, student: 2 }
 

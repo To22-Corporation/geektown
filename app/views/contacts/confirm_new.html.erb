@@ -1,0 +1,25 @@
+<h2>質問内容の確認</h2>
+<% if @contact.errors.any? %>
+  <%= @contact.errors.full_messages %>
+<% end %>
+<%= form_with model: @contact, local: true do |f| %>
+  <div class="field">
+    <%= f.label :engineer_id %><br>
+    <%= @contact.engineer.full_name %><br>
+    <%= f.hidden_field :engineer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :language_id %><br>
+    <%= @contact.language.name %><br>
+    <%= f.hidden_field :language_id %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, '内容を詳しく書いてください' %>
+    <%= @contact.content %><br>
+    <%= f.hidden_field :content %>
+  </div><br>
+  <div class="form-group">
+    <%= f.submit '戻る', name: 'back', class: 'btn btn-secondary' %>
+    <%= f.submit '質問を送る', class: 'btn btn-primary' %>
+  </div>
+<% end %>

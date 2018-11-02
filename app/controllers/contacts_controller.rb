@@ -3,8 +3,19 @@ class ContactsController < ApplicationController
     @contact = current_user.user_contacts.new
   end
 
+  def confirm_new
+    @contact = current_user.user_contacts.new(contact_params)
+    render :new unless @contact.valid?
+  end
+
   def create
     @contact = current_user.user_contacts.new(contact_params)
+
+    if params[:back].present?
+      render :new
+      return
+    end
+
     if @contact.save
       redirect_to root_path
     else
