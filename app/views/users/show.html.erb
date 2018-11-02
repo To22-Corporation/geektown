@@ -9,6 +9,9 @@
   <li class="list-group-item">
     <%= @user.job %>
   </li>
+  <li class="list-group-item">
+    <%= image_tag @user.avatar if @user.avatar.attached? %>
+  </li>
 </ul>
 <ul class="list-group">
   <% @user.engineer_contacts.each do |contact| %>

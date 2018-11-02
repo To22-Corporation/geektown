@@ -1,4 +1,4 @@
-<%= form_with model: Contact, local: true do |f| %>
+<%= form_with model: Contact, local: true, url: confirm_new_contact_path do |f| %>
   <div class="field">
     <%= f.label :engineer_id %><br>
     <%= f.select(:engineer_id, [@user.full_name], {}, class: 'form-control') %>

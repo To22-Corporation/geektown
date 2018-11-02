@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
                                                          last_name
                                                          last_name_kana
                                                          age
-                                                         job])
+                                                         job
+                                                         avatar])
   end
 end
