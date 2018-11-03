@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  background-color: $gray-800;
+
+  nav {
+    h1 {
+      color: $white;
+      font-size: 36px;
+    }
+    ul {
+      flex-direction: row;
+      li {
+        margin-left: 10px;
+        a {
+          color: $white;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

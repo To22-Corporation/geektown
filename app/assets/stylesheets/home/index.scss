@@ -1,0 +1,27 @@
+.top-image-container {
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+.top-image {
+  max-width: 100%;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  left: -50%;
+  margin: auto;
+}
+.top-first-container {
+  background-color: $white;
+
+  .title {
+    width: 100%;
+    text-align: center;
+    color: $gray-900;
+    padding: 3rem 0 1rem;
+  }
+
+  .contents-padding {
+    padding: 1rem;
+  }
+}
