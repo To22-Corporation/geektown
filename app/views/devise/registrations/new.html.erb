@@ -1,69 +1,87 @@
-<h2>Sign up</h2>
+<div class="devise-form">
+  <h2>新規アカウント登録</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="form-row form-group">
+      <div class="form-group col mb-3">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
+    <div class="form-row form-group">
+      <div class="form-group col-md-6">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </div>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
+      <div class="form-group col-md-6">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :last_name_kana %><br />
-    <%= f.text_field :last_name_kana %>
-  </div>
+    <div class="form-row form-group">
+      <div class="form-group col-md-6">
+        <%= f.label :last_name_kana %>
+        <%= f.text_field :last_name_kana %>
+      </div>
 
-  <div class="field">
-    <%= f.label :first_name_kana %><br />
-    <%= f.text_field :first_name_kana %>
-  </div>
+      <div class="form-group col-md-6">
+        <%= f.label :first_name_kana %>
+        <%= f.text_field :first_name_kana %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.select(:role, User.roles.keys.to_a, {}, class: 'form-control') %>
-  </div>
+    <div class="form-row form-group">
+      <div class="form-group">
+        <%= f.label :age %><br />
+        <%= f.number_field :age %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age %>
-  </div>
+    <div class="form-row form-group">
+      <div class="form-group">
+        <%= f.label :role %>
+        <%= f.select(:role, User.roles.keys.to_a, {}, class: 'form-control') %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :job %><br />
-    <%= f.select(:job, User.jobs.keys.to_a, {}, class: 'form-control') %>
-  </div>
+    <div class="form-row form-group">
+      <div class="form-group">
+        <%= f.label :job %>
+        <%= f.select(:job, User.jobs.keys.to_a, {}, class: 'form-control') %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :avatar %><br>
-    <%= f.file_field :avatar, class: 'form-control' %>
-  </div>
+    <div class="form-row form-group">
+      <div class="form-group custom-file col-6">
+        <%= f.label :avatar, class: 'custom-file-label' %>
+        <%= f.file_field :avatar, class: 'custom-file-input' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="form-row form-group">
+      <div class="form-group col-md-6">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          (<%= @minimum_password_length %>文字以上)
+        <% end %>
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="form-row form-group">
+      <div class="form-group col-md-6">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <div class="actions">
+      <%= f.submit "登録する", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

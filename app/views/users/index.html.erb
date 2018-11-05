@@ -1,17 +1,6 @@
-<h2>User#Index だお</h2>
-<ul class="list-group">
+<h2>登録エンジニア一覧</h2>
+<ul class="list-group engineer-list">
   <% @users.each do |user| %>
-    <li class="list-group-item">
-      <%= link_to user.full_name, user_path(user) %>
-      <%= user.job %>
-      <%= user.age %>
-    </li>
+    <%= render partial: 'users/user', locals: { user: user } %>
   <% end %>
 </ul>
-<% if user_signed_in? %>
-  <%= link_to 'マイページ', user_path(current_user), class: 'btn btn-secondary', role: 'button' %>
-  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-danger', role: 'button' %>
-<% else %>
-  <%= link_to 'GEEKTOWNに登録する', new_user_registration_path, class: 'btn btn-primary', role: "button" %>
-<% end %>
-<%= link_to 'エンジニアに質問する', new_contact_path, class: 'btn btn-primary', role: "button" %>

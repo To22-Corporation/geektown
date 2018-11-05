@@ -15,13 +15,15 @@
       <div class="top-image-container">
         <%= image_tag 'home.jpg', class: 'top-image' %>
       </div>
+      <div class="container">
+        <%= yield %>
+      </div>
     <% else %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <% end %>
     <div class="container">
+      <%= render partial: 'layouts/partials/alerts' %>
       <%= yield %>
     </div>
+    <% end %>
     <%= render partial: 'layouts/partials/footer' %>
   </body>
 </html>

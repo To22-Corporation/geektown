@@ -23,4 +23,19 @@ class User < ApplicationRecord
   def full_name
     [last_name, first_name].join(' ')
   end
+
+  def polite_job
+    case job
+    when 0
+      '大学生'
+    when 1
+      '社会人'
+    when 2
+      '高校生'
+    end
+  end
+
+  def polite_age
+    age.to_s + '歳'
+  end
 end
