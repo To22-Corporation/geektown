@@ -9,3 +9,47 @@
     }
   }
 }
+
+.user-container {
+  width: 100%;
+  margin: 2.5rem auto;
+
+  .card-body {
+    display: flex;
+
+    .left {
+      width: 40%;
+
+      .img-thumbnail {
+        width: 100%;
+      }
+
+      .profile-img {
+        text-align: center;
+
+        .card-title {
+          font-size: 1.5rem;
+          margin: 1rem auto;
+        }
+      }
+
+      .profile-text {
+
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .right {
+      width: 60%;
+      padding: 0 2rem;
+
+      .contacts {
+        margin-top: 2rem;
+
+
+      }
+    }
+  }
+}

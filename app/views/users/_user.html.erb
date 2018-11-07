@@ -1,12 +1,12 @@
 <div class="card border-dark">
-  <h5 class="card-header"><%= link_to user.full_name, user_path(user) %></h5>
+  <h5 class="card-header"><%= user.skills %></h5>
   <div class="card-body">
     <% if user.avatar.attached? %>
       <%= image_tag user.avatar %>
     <% else %>
       <%= image_tag 'default_icon.png' %>
     <% end %>
-    <h5 class="card-title"><%= user.full_name %> / <%= user.polite_job %> / <%= user.polite_age %></h5>
+    <h5 class="card-title"><%= user.full_name %> / <%= user.collage.name %> / <%= user.polite_age %></h5>
     <p class="card-text ">With supporting text below as a natural lead-in to additional content.</p>
     <%= link_to '詳細を見る', user_path(user), class: 'btn btn-primary' %>
   </div>

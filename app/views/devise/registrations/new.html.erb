@@ -51,8 +51,17 @@
 
     <div class="form-row form-group">
       <div class="form-group">
-        <%= f.label :job %>
-        <%= f.select(:job, User.jobs.keys.to_a, {}, class: 'form-control') %>
+        <%= f.label :collage %>
+        <%= f.collection_select(:collage_id, Collage.all.to_a, :id, :name, class: 'form-control') %>
+      </div>
+    </div>
+
+    <div class="form-row form-group">
+      <div class="form-group">
+        <%= f.label :language %>
+        <%= collection_check_boxes(:user, :language_ids, Language.all, :id, :name ) do |t|  %>
+          <% t.label(class: 'custom-control custom-checkbox') { t.check_box + t.text } %>
+        <% end %>
       </div>
     </div>
 

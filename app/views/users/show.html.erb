@@ -1,32 +1,51 @@
-<h2>User#Show だお</h2>
-<ul class="list-group">
-  <li class="list-group-item">
-    <%= @user.full_name %>
-  </li>
-  <li class="list-group-item">
-    <%= @user.role %>
-  </li>
-  <li class="list-group-item">
-    <%= @user.job %>
-  </li>
-  <li class="list-group-item">
-    <%= image_tag @user.avatar if @user.avatar.attached? %>
-  </li>
-</ul>
-<ul class="list-group">
-  <% @user.engineer_contacts.each do |contact| %>
-    <li class="list-group-item">
-      <%= User.find(contact.engineer_id).full_name %>
-    </li>
-    <li class="list-group-item">
-      <%= Language.find(contact.language_id).name %>
-    </li>
-    <li class="list-group-item">
-      <%= contact.content %>
-    </li>
-    <br>
-  <% end %>
-</ul>
+<div class="user-container">
+  <div class="card border-dark">
+    <div class="card-body">
+      <div class="left">
+        <div class="profile-img">
+          <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar, class: 'img-thumbnail' %>
+          <% else %>
+            <%= image_tag 'default_icon.png', class: 'img-thumbnail' %>
+          <% end %>
+          <h3 class="card-title"><%= @user.full_name %></h3>
+        </div>
+        <div class="profile-text">
+          <h4 class="card-title">所属 : <%= @user.collage.name %></h4>
+          <h4 class="card-title">年齢 : <%= @user.polite_age %></h4>
+          <p class="card-text ">With supporting text below as a natural lead-in to additional content.</p>
+        </div>
+      </div>
+      <div class="right">
+        <div class="profile-text">
+          <h4 class="card-title">対応可能言語</h4>
+          <p class="card-text"><%= @user.skills %></p>
+        </div>
+        <div class="contacts">
+          <h4 class="card-title">対応した質問</h4>
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">内容</th>
+              <th scope="col">質問受付日</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @user.user_contacts.each do |contact| %>
+            <tr>
+              <th scope="row"><%= contact.id %></th>
+              <td><%= contact.content %></td>
+              <td><%= I18n.l(contact.created_at, format: :default) %></td>
+            </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= render 'form' %>
 

@@ -2,6 +2,12 @@
 
 ja:
   activerecord:
+    errors:
+      models:
+        contact:
+          attributes:
+            engineer:
+              required: "エンジニアを設定してください"
     attributes:
       user:
         email: "メールアドレス"

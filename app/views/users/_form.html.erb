@@ -1,14 +1,16 @@
-<%= form_with model: Contact, local: true, url: confirm_new_contact_path do |f| %>
-  <div class="field">
-    <%= f.label :engineer_id %><br>
-    <%= f.select(:engineer_id, [@user.full_name], {}, class: 'form-control') %>
+<h2>このエンジニアに質問する</h2>
+<%= form_with model: @user.engineer_contacts.build, local: true, url: confirm_new_contact_path do |f| %>
+  <div class="form-group">
+    <%= f.label :engineer_id, '質問したいエンジニア' %><br>
+    <%= @user.full_name %>
+    <%= f.hidden_field :engineer_id %>
   </div>
-  <div class="field">
-    <%= f.label :language_id %><br>
+  <div class="form-group">
+    <%= f.label :language_id, '質問したい言語' %><br>
     <%= f.select(:language_id, Language.all.map { |lang| [lang.name, lang.id] }, {}, class: 'form-control') %>
   </div>
   <div class="form-group">
-    <%= f.label :content, '内容を詳しく書いてください' %>
+    <%= f.label :content, '質問内容を詳しく書いてください' %>
     <%= f.text_area :content, class: 'form-control' %>
   </div><br>
   <div class="form-group">
