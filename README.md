@@ -3,25 +3,27 @@ Dockerは仮想コンテナを立てることができるツールです。
 以下の記事がわかりやすいかと思います。
 [わかりやすい記事](https://qiita.com/miyasakura_/items/87ccb6d4a52d4a00a999)
 
-以下の環境構築には[Docker for Mac](https://www.docker.com/products/docker-desktop)が必要です。
-Windowsの人は[Docker for Windows](https://www.docker.com/products/docker-desktop)からインストールしてください。
-
 ## 環境構築方法
 
 ### 1. リポジトリをクローンする
+
+環境構築には[Docker for Mac](https://www.docker.com/products/docker-desktop)が必要です。
+Windowsの人は[Docker for Windows](https://www.docker.com/products/docker-desktop)からインストールしてください。
+
+### 2. リポジトリをクローンする
 
 ```
 $ git clone https://github.com/To22-Corporation/geektown.git
 $ cd line-management
 ```
 
-### 2. 環境ファイルの用意
+### 3. 環境ファイルの用意
 
 ```
 $ cp .env.example .env
 ```
 
-### 3. 開発環境の起動
+### 4. 開発環境の起動
 
 ```
 # 以下geektownディレクトリ下で
@@ -47,7 +49,7 @@ exit
 
 あとは[http://localhost](http://localhost)にアクセスしてアプリケーションが起動していれば完了です。
 
-### 4. 開発環境の終了方法
+### 5. 開発環境の終了方法
 
 ```
 $ docker-compose stop
