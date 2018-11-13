@@ -7,20 +7,19 @@ RUN apt-get update -qq && \
     apt-get install -y build-essential \
                        default-libmysqlclient-dev \
                        nodejs
+
 # ルート直下にコンテナ内作業ディレクトリ作成
-RUN mkdir /recipio_app
-WORKDIR /recipio_app
+RUN mkdir /app
+WORKDIR /app
 
 # ホストにGemfileと.lockをコピー
-ADD Gemfile /recipio_app/Gemfile
-ADD Gemfile.lock /recipio_app/Gemfile.lock
+ADD Gemfile /app/Gemfile
+ADD Gemfile.lock /app/Gemfile.lock
 
 # gemをインストール
 RUN bundle install
 
 # ホストのアプリケーションディレクトリをコピー
-ADD . /recipio_app
+# ADD . /app
 
 RUN mkdir -p tmp/sockets
-
-
