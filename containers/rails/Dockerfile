@@ -20,6 +20,6 @@ ADD Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 
 # ホストのアプリケーションディレクトリをコピー
-# ADD . /app
+ADD . /app
 
 RUN mkdir -p tmp/sockets
