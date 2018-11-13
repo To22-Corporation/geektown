@@ -1,0 +1,45 @@
+version: '3'
+services:
+  app:
+    tty: true
+    stdin_open: true
+    build:
+      context: ./containers/rails
+      dockerfile: Dockerfile
+    env_file:
+      - ./environments/db.env
+    command: bundle exec puma -C config/puma.rb
+    volumes:
+      - .:/recipio_app
+      - public-data:/recipio_app/public
+      - tmp-data:/recipio_app/tmp
+      - log-data:/recipio_app/log
+    depends_on:
+      - db
+  db:
+    build:
+      context: ./containers/mysql
+      dockerfile: Dockerfile
+    env_file:
+      - ./environments/db.env
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+  web:
+    build:
+      context: ./containers/nginx
+      dockerfile: Dockerfile
+    volumes:
+      - public-data:/recipio_app/public
+      - tmp-data:/recipio_app/tmp
+    ports:
+      - 4000:80
+    depends_on:
+      - app
+
+volumes:
+  public-data:
+  tmp-data:
+  log-data:
+  db-data:
