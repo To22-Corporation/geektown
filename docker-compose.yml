@@ -10,10 +10,10 @@ services:
       - ./environments/db.env
     command: bundle exec puma -C config/puma.rb
     volumes:
-      - .:/recipio_app
-      - public-data:/recipio_app/public
-      - tmp-data:/recipio_app/tmp
-      - log-data:/recipio_app/log
+      - .:/app
+      - public-data:/app/public
+      - tmp-data:/app/tmp
+      - log-data:/app/log
     depends_on:
       - db
   db:
@@ -31,8 +31,8 @@ services:
       context: ./containers/nginx
       dockerfile: Dockerfile
     volumes:
-      - public-data:/recipio_app/public
-      - tmp-data:/recipio_app/tmp
+      - public-data:/app/public
+      - tmp-data:/app/tmp
     ports:
       - 4000:80
     depends_on:
