@@ -58,6 +58,10 @@ group :development do
   gem 'capistrano-rbenv', require: false
   gem "capistrano-rails", "~> 1.4", require: false
   gem "capistrano-passenger", "~> 0.2.0"
+  gem 'rubocop', require: false
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  ge, 'rails-erd'
 end
 
 group :production, :staging do
