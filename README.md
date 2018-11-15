@@ -87,7 +87,7 @@ open erd.pdf
     1. 外部仕様(満たすべき機能)
   1. ラベルを設定(develop, bugfix, enhancement, invalid)
 1. ブランチを切る(masterでは作業をしない)
-  1. ブランチ名は{user名}/#{issue番号}_{実装機能}
+  1. ブランチ名は{user名}/{issue番号}_{実装機能}
     - ex) oky123/#5_add_user_registration
 1. プルリクを立てる(masterと差分ができた段階で)
   1. タイトルに[WIP] とつける(Work In Progressの意味)
