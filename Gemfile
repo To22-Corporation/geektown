@@ -14,7 +14,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
+gem 'mini_racer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -58,6 +58,10 @@ group :development do
   gem 'capistrano-rbenv', require: false
   gem "capistrano-rails", "~> 1.4", require: false
   gem "capistrano-passenger", "~> 0.2.0"
+  gem 'rubocop', require: false
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'rails-erd'
 end
 
 group :production, :staging do

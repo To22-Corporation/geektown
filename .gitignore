@@ -30,3 +30,5 @@
 /.idea/
 
 /vendor/*
+
+.env
