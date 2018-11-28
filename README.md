@@ -5,7 +5,7 @@ Dockerは仮想コンテナを立てることができるツールです。
 
 ## 環境構築方法
 
-### 1. リポジトリをクローンする
+### 1. Dockerの準備
 
 環境構築には[Docker for Mac](https://www.docker.com/products/docker-desktop)が必要です。
 Windowsの人は[Docker for Windows](https://www.docker.com/products/docker-desktop)からインストールしてください。
@@ -17,11 +17,12 @@ $ git clone https://github.com/To22-Corporation/geektown.git
 $ cd line-management
 ```
 
-### 3. 環境ファイルの用意
+### 3. envファイルの用意
 
 ```
 $ cp .env.example .env
 ```
+
 
 ### 4. 開発環境の起動
 
@@ -69,7 +70,7 @@ docker-compose run --rm app bash
 # すでに起動しているappコンテナにアクセスし、bashを起動する。この時dbコンテナと通信することでmysqlとのやりとりもできる。
 docker exec -it geektown_app_1 /bin/bash
 ```
-j
+
 ### erd
 railsがマイグレーションを実行する度にスキーマからER図をpdfで出力してくれます。
 以下のコマンドで確認できます。
@@ -111,7 +112,7 @@ open erd.pdf
 - 他の開発者とコードの共有, 確認
 - 自分の開発の進捗の整理
 
-お互い困った時には気軽にレビューや相談を求めましょう！
+困った時には気軽にレビューや相談を求めましょう！
 
 ## レビュー
 masterは常にデプロイできる状態(のはず)です。
